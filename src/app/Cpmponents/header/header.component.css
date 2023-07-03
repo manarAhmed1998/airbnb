@@ -1,0 +1,16 @@
+ul li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+.search-bar{
+    height: 40px;
+}
+.search-bar div{
+    margin:10px;
+}
+vr{
+    height: 100%;
+}

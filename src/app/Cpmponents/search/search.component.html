@@ -1,0 +1,63 @@
+
+  <!-- Modal -->
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: red;"> Book unique home and experiences</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="searchForm">
+                <label class="form-select-label" for="Default select example">Where</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Any Where</option>
+                    <option value="1">Alexandria</option>
+                    <option value="2">Aswan</option>
+                    <option value="3">Asyut</option>
+                    <option value="4">Beheira</option>
+                    <option value="5">Beni Suef</option>
+                    <option value="6">Cairo</option>
+                    <option value="7">Dakahlia</option>
+                    <option value="8">Damietta</option>
+                    <option value="9">Faiyum</option>
+                    <option value="10">Gharbia</option>
+                    <option value="11">Giza</option>
+                    <option value="12">Ismailia</option>
+                    <option value="13">Kafr El Sheikh</option>
+                    <option value="14">Luxor</option>
+                    <option value="15">Matruh</option>
+                    <option value="16">Minya</option>
+                    <option value="17">Monufia</option>
+                    <option value="18">New Valley</option>
+                    <option value="19">North Sinai</option>
+                    <option value="20">Port Said</option>
+                    <option value="21">Qalyubia</option>
+                    <option value="22">Qena</option>
+                    <option value="23">Red Sea</option>
+                    <option value="24">Sharqia</option>
+                    <option value="25">Sohag</option>
+                    <option value="26">South Sinai</option>
+                    <option value="27">Suez</option>
+                  </select><br>
+
+                  <!-- datePicker -->
+                  
+      
+                
+            <!-- <hr />
+            <pre>From date model: {{ fromDate | json }}</pre>
+            <pre>To date model: {{ toDate | json }}</pre> -->
+            <div class="col-12 form-outline">
+                <label class="form-label" for="guestNum">Guests</label>
+                <input id="guestNum"  type="number"class="form-control" />
+            </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
