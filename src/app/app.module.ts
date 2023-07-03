@@ -9,6 +9,7 @@ import { CardsComponent } from './Cpmponents/Cards/cards/cards.component';
 import { FiltersComponent } from './Cpmponents/filters/filters.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './Cpmponents/search/search.component';
+import { CardDetailsComponent } from './Cpmponents/card-details/card-details.component';
 
 
 
@@ -19,7 +20,8 @@ import { SearchComponent } from './Cpmponents/search/search.component';
     HeaderComponent,
     CardsComponent,
     FiltersComponent,
-    SearchComponent
+    SearchComponent,
+    CardDetailsComponent
   ],
   imports: [
     BrowserModule,
