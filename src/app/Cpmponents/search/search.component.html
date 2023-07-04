@@ -41,18 +41,28 @@
                     <option value="27">Suez</option>
                   </select><br>
 
-                  <!-- datePicker -->
+                               <!-- datePicker -->
                   
-      
-                
-            <!-- <hr />
-            <pre>From date model: {{ fromDate | json }}</pre>
-            <pre>To date model: {{ toDate | json }}</pre> -->
-            <div class="col-12 form-outline">
-                <label class="form-label" for="guestNum">Guests</label>
-                <input id="guestNum"  type="number"class="form-control" />
-            </div>
-            </form>
+                               <mat-form-field>
+                                <mat-label>Enter a date range</mat-label>
+                                <mat-date-range-input [rangePicker]="picker">
+                                  <input matStartDate placeholder="Start date">
+                                  <input matEndDate placeholder="End date">
+                                </mat-date-range-input>
+                                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-date-range-picker #picker></mat-date-range-picker>
+                              </mat-form-field>
+                            
+                        <!-- <hr />
+                        <pre>From date model: {{ fromDate | json }}</pre>
+                        <pre>To date model: {{ toDate | json }}</pre> -->
+                        <div class="col-12 form-outline">
+                            <label class="form-label" for="guestNum">Guests</label>
+                            <input id="guestNum"  type="number"class="form-control" />
+                        </div>
+                        </form>
+            
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
