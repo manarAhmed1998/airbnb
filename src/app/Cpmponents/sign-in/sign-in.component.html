@@ -1,0 +1,74 @@
+<div id="sign-in" class="container">
+  <div class="row">
+    <div class="col">
+      <h2 mat-dialog-title style="text-align: center;">Sign In</h2>
+    </div>
+  </div>
+
+  <div class="container">
+    <mat-dialog-content>
+      <form [formGroup]="signInForm" (ngSubmit)="submitSignInForm()">
+        <div class="row">
+            <mat-form-field>
+              <div class="col-md-12">
+
+              <mat-label>Enter your email</mat-label>
+              <input matInput
+              placeholder="pat@example.com"
+              formControlName="emailControl"
+                required
+                    />
+              <mat-error *ngIf="signInForm.get('emailControl')?.invalid">{{
+                getErrorMessage()
+              }}</mat-error>
+            </div>
+
+            </mat-form-field>
+          </div>
+
+
+            <div class="row">
+              <mat-form-field>
+
+          <div class="col-md-12">
+              <mat-label>Enter your password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'"
+              formControlName ='passwordControl' required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+  </div>
+</mat-form-field>
+<mat-error *ngIf="signInForm.get('passwordControl')?.invalid">{{ getPasswordErrorMessage()}}</mat-error>
+</div>
+
+
+
+
+      </form>
+    </mat-dialog-content>
+
+
+
+      <mat-dialog-actions align="end">
+
+
+        <button mat-button mat-dialog-close>Cancel</button>
+<button mat-button color="primary" (click)="openSignUpDialog()">Don't have an account? Sign Up</button>
+
+        <button mat-button [mat-dialog-close]="true"
+        cdkFocusInitial [disabled]="!signInForm.valid"
+        (click)="submitSignInForm()">
+          Sign In</button>
+
+
+
+
+    </mat-dialog-actions>
+
+
+
+
+  </div>
+</div>
