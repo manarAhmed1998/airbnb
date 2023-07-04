@@ -14,14 +14,16 @@ export class HeaderComponent {
 
   openSignInDialog(): void {
     const dialogRef = this.dialog.open(SignInComponent, {
-      width: '800px'
+      width: '744px',
+      panelClass: 'sign-In'
     });
   }
 
   openSignUpDialog(): void {
 
     const dialogRef = this.dialog.open(SignUpComponent,{
-      width:'800px',
+      width:'744px',
+      panelClass:'sign-Up'
     });
   }
 }

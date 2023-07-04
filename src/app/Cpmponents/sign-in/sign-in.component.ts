@@ -99,7 +99,7 @@ submitSignInForm() {
 openSignUpDialog(): void {
   this.dialogRef.close();
   const dialogRef = this.dialog.open(SignUpComponent,{
-    width:'800px'
+    width:'744px'
 
   });
 }
