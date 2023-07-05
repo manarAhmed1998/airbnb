@@ -75,7 +75,7 @@ main {
   position: fixed;
   box-shadow: inset rgb(213, 208, 202);
   right: 115px;
-  top: 200px;
+  top: 300px;
   height: 500px;
 }
 .floating-menu a,
@@ -97,4 +97,10 @@ main {
 #price {
   font-weight: bold;
   font-size: 2em;
+}
+#total{
+    font-weight:400;
+    font-size: large;
+    position: relative;
+    left: 280px;
 }
