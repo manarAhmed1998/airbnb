@@ -29,7 +29,7 @@ constructor(private http: HttpClient, public dialog: MatDialog, public dialogRef
     nameControl : new FormControl('', [ Validators.required ,Validators.maxLength(15)   ]  ) , 
     emailControl: new FormControl('', [Validators.required, Validators.email ,Validators.minLength(15)]),
     phoneCountryControl: new FormControl('', Validators.required),
-    phoneNumberControl: new FormControl('', [Validators.required, Validators.pattern(/^\d{10}$/)]),
+    phoneNumberControl: new FormControl('', [Validators.required, Validators.pattern(/^\d{11}$/)]),
     nationalIdControl: new FormControl('', [Validators.required, Validators.minLength(14), Validators.maxLength(14)]),
     usernameControl: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9_]*$'), Validators.minLength(5), Validators.maxLength(20)]),
     passwordControl : new FormControl('', [Validators.required, Validators.maxLength(64),Validators.minLength(8)] ),
@@ -136,25 +136,34 @@ return'';
 
   submitSignUpForm() {
     const formData = {
-      emailControl: this.signUpForm.get('emailControl')?.value,
-      phoneCountry: this.signUpForm.get('phoneCountryControl')?.value,
-      phoneNumber: this.signUpForm.get('phoneNumberControl')?.value,
-      nationalId: this.signUpForm.get('nationalIdControl')?.value,
-      username: this.signUpForm.get('usernameControl')?.value,
-      FullName:this.signUpForm.get('nameControl')?.value,
-      countrycode:this.signUpForm.get('phoneCountryControl')
+      "name": this.signUpForm.get('nameControl')?.value,
+      "ssn": this.signUpForm.get('nationalIdControl')?.value?.toString(),
+      "email": this.signUpForm.get('emailControl')?.value,
+      "userName": this.signUpForm.get('usernameControl')?.value,
+      "password": this.signUpForm.get('passwordControl')?.value,
+      "dateOfBirth": "2023-07-04T19:16:54.546Z",
+      "profilePicture": "string",
+      "phoneNumber":this.signUpForm.get('phoneNumberControl')?.value?.toString() ,
+      "country": "Egypt",
+      "government": "Sharqia",
+      "city": "string",
+      "street": "string",
+      "longitude": "string",
+      "latitude": "string"
     };
 
-    this.http.post('https://example.com/api/signup', formData)
-      .subscribe(
-        (result) => {
-          console.log('Sign-up successful!', result);
+    this.http.post('http://localhost:5012/api/Users/Register', formData)
+      .subscribe({
+        next: (res) => {
+          console.log('Sign-up successful!', res);
           // navigate to a success page or display a success message
         },
-        (error) => {
-          console.error('Sign-up failed!', error);
+        error:(err)=> {
+          console.error('Sign-up failed!', err);
           // display an error message or handle the error in some other way
         }
+      }
+        
       );
   }
   passwordMatch(control: AbstractControl): ValidationErrors | null {
@@ -188,5 +197,3 @@ return'';
     });
   }
 }
-
-
