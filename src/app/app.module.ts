@@ -24,7 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogRef , MatDialogConfig } from '@angular/material/dialog';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
-import{    HttpClientModule} from '@angular/common/http'
+import{    HttpClientModule} from '@angular/common/http';
+import { DashboardComponent } from './Cpmponents/dashboard/dashboard.component'
 
 
 
@@ -40,6 +41,7 @@ import{    HttpClientModule} from '@angular/common/http'
     
     SignInComponent,
     SignUpComponent,
+    DashboardComponent,
     
   ],
   imports: [
