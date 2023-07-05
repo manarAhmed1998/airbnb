@@ -55,6 +55,7 @@ img {
 #Rating {
   padding-left: 55px;
   font-size: 17px;
+  position: relative;
 }
 #reviews,
 #renter {
@@ -73,7 +74,6 @@ main {
   width: 420px;
   z-index: 1;
   position: fixed;
-  box-shadow: inset rgb(213, 208, 202);
   right: 115px;
   top: 300px;
   height: 500px;
