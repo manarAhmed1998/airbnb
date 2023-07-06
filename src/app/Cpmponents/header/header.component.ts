@@ -3,6 +3,8 @@ import { MaterialModule } from 'src/app/shared/material.module';
 import { SignInComponent } from '../sign-in/sign-in.component';
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { MatDialog ,MatDialogConfig ,MatDialogRef} from '@angular/material/dialog';
+
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -26,4 +28,7 @@ export class HeaderComponent {
       panelClass:'sign-Up'
     });
   }
+
+
+  
 }
