@@ -42,8 +42,7 @@
                   </select><br>
 
                                <!-- datePicker -->
-                  
-                               <mat-form-field>
+                               <mat-form-field class="container">
                                 <mat-label>Enter a date range</mat-label>
                                 <mat-date-range-input [rangePicker]="picker">
                                   <input matStartDate placeholder="Start date">
@@ -54,9 +53,6 @@
                                 <mat-date-range-picker #picker></mat-date-range-picker>
                               </mat-form-field>
                             
-                        <!-- <hr />
-                        <pre>From date model: {{ fromDate | json }}</pre>
-                        <pre>To date model: {{ toDate | json }}</pre> -->
                         <div class="col-12 form-outline">
                             <label class="form-label" for="guestNum">Guests</label>
                             <input id="guestNum"  type="number"class="form-control" />

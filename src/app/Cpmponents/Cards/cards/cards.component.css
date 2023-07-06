@@ -1,22 +1,17 @@
 /*Buttons Section*/
- .carousel-indicators button {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    opacity:initial;
-    border-radius: 50%;
-  } 
- 
-  
-   
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  opacity: initial;
+  border-radius: 50%;
+}
+
 /*button shape*/
 #main-caurosel span {
   display: inline-block;
   padding: 10px 15px;
-  transition: background-color .1s ease;
-  background-color: #b2b2b2;
+  transition: background-color 0.1s ease;
 }
-
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -25,93 +20,83 @@
   border-radius: 50% !important;
 }
 
-
- /*Hovering*/
+/*Hovering*/
 .carousel-control-prev,
 .carousel-control-next {
   visibility: hidden;
-  opacity: 0; 
+  opacity: 0;
 }
 
 #main-caurosel:hover .carousel-control-prev,
 #main-caurosel:hover .carousel-control-next {
   visibility: visible;
   opacity: 1;
-  
 }
-
 
 /*End Of Buttons Section*/
 
-
 /* Cards Section Layout*/
-
-
-#main-caurosel:hover{
-  border: 5px solid rgb(255, 255, 255);
-
-
-} 
 .carousel-inner {
   border-radius: 15px;
-
 }
 
- #main-caurosel {
-  width: 520px;
-  margin: 0 auto;
-  height:350px;
-}   
+img {
+  width: 304px;
+  height: 289px;
+}
+
+li {
+  list-style: none;
+  width: 304px;
+}
 
 /*  End Of Cards Section Layout*/
 
-
-
-
-
 /*Paragraphs Section*/
 
-
-#Location{
-  font-family: 
-  Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-size:16px;
-}
-   div  #Duration{
-  background-color: #fff;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 15px; 
-  color:grey;
-  padding-left: 0px;
-  line-height:1px;
-
+#card-body {
+  width: 304px;
+  height: 102px;
 }
 
-
- div p #Price {
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+#Location {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif;
   font-size: 16px;
-  color: rgb(32, 32, 32);
+}
+div #Duration #distance {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  color: rgb(134, 131, 131);
+  padding-left: 0px;
+  line-height: 1px;
+}
+
+div p #Price {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif;
+  font-size: 16px;
 }
 
 #Rating {
-  padding-bottom:200px;
-  padding-left: 450px;
-  position:fixed;
-  display: flex;
+  padding-bottom: 200px;
+  padding-left: 110px;
+  position: relative;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  color: rgb(2, 2, 2);
-} 
+}
 
+#card-body p {
+  margin: 5px;
+}
 
-
+#distance {
+  color: grey;
+}
 
 /* End Of Paragraphs Section*/
-
-
-
 
 /*Like Icon*/
 .like-icon {
@@ -126,6 +111,47 @@
 
 #main-caurosel:hover .like-icon {
   visibility: visible;
+}
+
+/* grid system */
+
+ul {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: normal;
+  row-gap: inherit;
+}
+
+@media screen and (min-width:52px){
+  .container{
+  max-width: 549px;
+  display: grid;
+  grid-template-columns: auto;
+ }
+}
+
+@media screen and (min-width:555px){
+  .container{
+  max-width: 955px;
+  display: grid;
+  grid-template-columns: auto auto;
+ }
+}
+
+@media screen and (min-width:956px){
+  .container{
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: auto auto auto; 
+ }
+}
+
+@media screen and (min-width:1101px){
+  ul {
+    max-width: inherit;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
 }
 
 
