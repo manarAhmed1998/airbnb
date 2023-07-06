@@ -59,7 +59,7 @@ this.RenderChart();
       labels: ['New Properties', 'Removed Proberties', 'Most Liked', 'Most Disliked', 'Panned ', '  VIP'],
       datasets: [{
           label: '# of Properties',
-          data: [12, 19, 3, 8, 2, 3],
+          data: [12, 19, 3, 8, 2, 120],
           backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -89,4 +89,6 @@ this.RenderChart();
 });
 
 }
+
+ 
 }
