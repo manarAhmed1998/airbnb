@@ -37,8 +37,10 @@ let routes:Routes=[
   {path:'home',component:CardsComponent},
   {path:'cards',component:CardsComponent},
   {path:'cards/:id',component:CardDetailsComponent},
-  {path:'**',component:ErrorComponent},
-  {path:'add-property' , component: AddPropertyComponent  }
+  {path:'add-property',component:AddPropertyComponent},
+  
+  //erro should be last
+  {path:'**',component:ErrorComponent}
 ]
 
 @NgModule({
