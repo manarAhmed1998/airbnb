@@ -31,6 +31,7 @@ import { DashboardComponent } from "./Cpmponents/dashboard/dashboard.component";
 import { ErrorComponent } from "./Cpmponents/error/error.component";
 import { RouterModule,Routes,ROUTES } from "@angular/router";
 import { AddPropertyComponent } from "./Cpmponents/add-property/add-property.component";
+import { NotFoundComponent } from './Cpmponents/not-found/not-found.component';
 
 let routes:Routes=[
   {path:'',component:CardsComponent},
@@ -38,7 +39,7 @@ let routes:Routes=[
   {path:'cards',component:CardsComponent},
   {path:'cards/:id',component:CardDetailsComponent},
   {path:'add-property',component:AddPropertyComponent},
-  
+  {path:'results-not-found',component:NotFoundComponent},
   //erro should be last
   {path:'**',component:ErrorComponent}
 ]
@@ -56,6 +57,7 @@ let routes:Routes=[
     SignUpComponent,
     DashboardComponent,
     ErrorComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
