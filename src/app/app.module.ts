@@ -30,13 +30,15 @@ import { HttpClientModule } from "@angular/common/http";
 import { DashboardComponent } from "./Cpmponents/dashboard/dashboard.component";
 import { ErrorComponent } from "./Cpmponents/error/error.component";
 import { RouterModule,Routes,ROUTES } from "@angular/router";
+import { AddPropertyComponent } from "./Cpmponents/add-property/add-property.component";
 
 let routes:Routes=[
   {path:'',component:CardsComponent},
   {path:'home',component:CardsComponent},
   {path:'cards',component:CardsComponent},
   {path:'cards/:id',component:CardDetailsComponent},
-  {path:'**',component:ErrorComponent}
+  {path:'**',component:ErrorComponent},
+  {path:'add-property' , component: AddPropertyComponent  }
 ]
 
 @NgModule({
