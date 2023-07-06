@@ -83,15 +83,16 @@ submitSignInForm() {
   console.log('submitSignInForm:', formData);
 
   this.http.post('https://example.com/api/authenticate', formData)
-    .subscribe(
-      (response: any) => {
-        console.log('Sign-in successful!', response);
+    .subscribe({
+      next:(res)=>{
+        console.log('Sign-in successful!', res);
         // handle successful authentication (e.g. store the access token or cookie)
       },
-      (error) => {
-        console.error('Sign-in failed!', error);
+      error:(err)=>{
+        console.error('Sign-in failed!', err);
         // display an error message or handle the error in some other way
       }
+    }  
     );
 }
 
