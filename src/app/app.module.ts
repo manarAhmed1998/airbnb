@@ -25,7 +25,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogRef , MatDialogConfig } from '@angular/material/dialog';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import{    HttpClientModule} from '@angular/common/http';
-import { DashboardComponent } from './Cpmponents/dashboard/dashboard.component'
+import { DashboardComponent } from './Cpmponents/dashboard/dashboard.component';
+import { ErrorComponent } from './Cpmponents/error/error.component';
 
 
 
@@ -42,6 +43,8 @@ import { DashboardComponent } from './Cpmponents/dashboard/dashboard.component'
     SignInComponent,
     SignUpComponent,
     DashboardComponent,
+    ErrorComponent,
+
     
   ],
   imports: [
