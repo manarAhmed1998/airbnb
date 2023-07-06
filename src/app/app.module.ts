@@ -35,6 +35,7 @@ import { AmenitiesDasboardComponent } from "./Cpmponents/amenities-dasboard/amen
 import { ChartsDashboardComponent } from "./Cpmponents/charts-dashboard/charts-dashboard.component";
 import { NavbarDashboardComponent
  } from "./Cpmponents/navbar-dashboard/navbar-dashboard.component";
+import { DashboardComponent } from './Cpmponents/dashboard/dashboard.component';
 
 let routes:Routes=[
   {path:'',component:CardsComponent},
@@ -62,7 +63,8 @@ let routes:Routes=[
     NavbarDashboardComponent,
     ChartsDashboardComponent,
     ErrorComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
