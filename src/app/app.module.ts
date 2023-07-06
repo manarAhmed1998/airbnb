@@ -25,9 +25,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogRef , MatDialogConfig } from '@angular/material/dialog';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import{    HttpClientModule} from '@angular/common/http';
-import { DashboardComponent } from './Cpmponents/dashboard/dashboard.component';
-
-
+import { AmenitiesDasboardComponent } from './Cpmponents/amenities-dasboard/amenities-dasboard.component';
+import { NavbarDashboardComponent } from './Cpmponents/navbar-dashboard/navbar-dashboard.component';
+import { ChartsDashboardComponent } from './Cpmponents/charts-dashboard/charts-dashboard.component';
+ 
 
 @NgModule({
   declarations: [
@@ -41,7 +42,10 @@ import { DashboardComponent } from './Cpmponents/dashboard/dashboard.component';
     
     SignInComponent,
     SignUpComponent,
-    DashboardComponent,
+    AmenitiesDasboardComponent,
+    
+    NavbarDashboardComponent,
+    ChartsDashboardComponent,
 
     
   ],

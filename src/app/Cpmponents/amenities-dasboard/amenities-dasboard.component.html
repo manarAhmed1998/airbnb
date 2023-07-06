@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Icon</th>
+            <th>Content</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let amenity of amenities">
+            <td>{{ amenity.id }}</td>
+            <td>{{ amenity.icon }}</td>
+            <td>{{ amenity.content }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
