@@ -40,7 +40,7 @@ let routes:Routes=[
   {path:'cards/:id',component:CardDetailsComponent},
   {path:'add-property',component:AddPropertyComponent},
   {path:'results-not-found',component:NotFoundComponent},
-  //erro should be last
+  //error should be last
   {path:'**',component:ErrorComponent}
 ]
 
