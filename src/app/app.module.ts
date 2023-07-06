@@ -36,8 +36,7 @@ let routes:Routes=[
   {path:'home',component:CardsComponent},
   {path:'cards',component:CardsComponent},
   {path:'cards/:id',component:CardDetailsComponent},
-  {path:'',component:CardDetailsComponent},
-  {path:'',component:CardDetailsComponent}
+  {path:'**',component:ErrorComponent}
 ]
 
 @NgModule({
