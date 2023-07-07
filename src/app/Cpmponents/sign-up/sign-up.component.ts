@@ -6,7 +6,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatDialogModule ,MatDialogRef,MatDialogConfig,MatDialog} from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { SignInComponent } from '../sign-in/sign-in.component';
-import { SignUpDto } from '../types/SignUpDTO';
+import { SignUpDto } from '../types/SignUpDto';
 
 @Component({
   selector: 'app-sign-up',
