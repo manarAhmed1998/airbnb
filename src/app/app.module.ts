@@ -32,13 +32,20 @@ import { ErrorComponent } from "./Cpmponents/error/error.component";
 import { RouterModule,Routes,ROUTES } from "@angular/router";
 import { AddPropertyComponent } from "./Cpmponents/add-property/add-property.component";
 
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { MatStepperModule } from '@angular/material/stepper';
+
 let routes:Routes=[
   {path:'',component:CardsComponent},
   {path:'home',component:CardsComponent},
   {path:'cards',component:CardsComponent},
   {path:'cards/:id',component:CardDetailsComponent},
+  {path:'add-property' , component: AddPropertyComponent  },
   {path:'**',component:ErrorComponent},
-  {path:'add-property' , component: AddPropertyComponent  }
+
 ]
 
 @NgModule({
@@ -54,6 +61,7 @@ let routes:Routes=[
     SignUpComponent,
     DashboardComponent,
     ErrorComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -70,6 +78,12 @@ let routes:Routes=[
     MaterialModule,
     MatDialogModule,
     HttpClientModule,
+    
+    MatSelectModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatCardModule,
+    MatStepperModule,
     RouterModule.forRoot(routes)
   ],
   providers: [{ provide: MatDialogRef, useValue: {} }],
