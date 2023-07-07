@@ -33,9 +33,10 @@ import { AddPropertyComponent } from "./Cpmponents/add-property/add-property.com
 import { NotFoundComponent } from './Cpmponents/not-found/not-found.component';
 import { AmenitiesDasboardComponent } from "./Cpmponents/amenities-dasboard/amenities-dasboard.component";
 import { ChartsDashboardComponent } from "./Cpmponents/charts-dashboard/charts-dashboard.component";
-import { NavbarDashboardComponent
- } from "./Cpmponents/navbar-dashboard/navbar-dashboard.component";
+import { NavbarDashboardComponent } from "./Cpmponents/navbar-dashboard/navbar-dashboard.component";
 import { DashboardComponent } from './Cpmponents/dashboard/dashboard.component';
+import { RoleDashboardComponent } from './role-dashboard/role-dashboard.component';
+import { RuleDashboardComponent } from './rule-dashboard/rule-dashboard.component';
 
 let routes:Routes=[
   {path:'',component:CardsComponent},
@@ -64,7 +65,9 @@ let routes:Routes=[
     ChartsDashboardComponent,
     ErrorComponent,
     NotFoundComponent,
-    DashboardComponent
+    DashboardComponent,
+    RoleDashboardComponent,
+    RuleDashboardComponent
   ],
   imports: [
     BrowserModule,
