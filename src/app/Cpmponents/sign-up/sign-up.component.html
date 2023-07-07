@@ -7,7 +7,7 @@
 
     <div class="container">
       <mat-dialog-content>
-        <form [formGroup]="signUpForm" (ngSubmit)="submitSignUpForm()">
+        <form [formGroup]="signUpForm" (ngSubmit)="submitSignUpForm($event)">
           <div class="row">
             <div class="col-md-6">
               <mat-form-field hintLabel="Max 15 characters">
@@ -106,7 +106,7 @@
                 <mat-form-field>
                   <input
                     matInput
-                    type="number"
+                    type="text"
                     maxlength="14"
                     placeholder="Enter your National ID"
                     formControlName="nationalIdControl"
@@ -190,7 +190,7 @@
           [mat-dialog-close]="true"
           cdkFocusInitial
           [disabled]="!signUpForm.valid"
-          (click)="submitSignUpForm()"
+          (click)="submitSignUpForm($event)"
         >
           Sign Up
         </button>
