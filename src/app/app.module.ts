@@ -27,11 +27,15 @@ import {
   MAT_DIALOG_DEFAULT_OPTIONS,
 } from "@angular/material/dialog";
 import { HttpClientModule } from "@angular/common/http";
-import { DashboardComponent } from "./Cpmponents/dashboard/dashboard.component";
 import { ErrorComponent } from "./Cpmponents/error/error.component";
 import { RouterModule,Routes,ROUTES } from "@angular/router";
 import { AddPropertyComponent } from "./Cpmponents/add-property/add-property.component";
 import { NotFoundComponent } from './Cpmponents/not-found/not-found.component';
+import { AmenitiesDasboardComponent } from "./Cpmponents/amenities-dasboard/amenities-dasboard.component";
+import { ChartsDashboardComponent } from "./Cpmponents/charts-dashboard/charts-dashboard.component";
+import { NavbarDashboardComponent
+ } from "./Cpmponents/navbar-dashboard/navbar-dashboard.component";
+import { DashboardComponent } from './Cpmponents/dashboard/dashboard.component';
 
 let routes:Routes=[
   {path:'',component:CardsComponent},
@@ -55,9 +59,12 @@ let routes:Routes=[
     CardDetailsComponent,
     SignInComponent,
     SignUpComponent,
-    DashboardComponent,
+    AmenitiesDasboardComponent,
+    NavbarDashboardComponent,
+    ChartsDashboardComponent,
     ErrorComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

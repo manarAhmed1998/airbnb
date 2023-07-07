@@ -1,17 +1,7 @@
-
-  .nav-link:hover {
-    color: #000000;
-    background: #f8f9fa;
-  } 
-  #airbnb{
-    color:#f800ad
+.container{
+    padding-top: 90px;
+    padding-left: 200px;
+}
+.card-body-chart {
+    height: 400px;
   }
-  .nav-item{
-    padding-top: 30px;
-  }
- #TEXT{
-    padding-left: 10px;
-    font-size: 15px;
- }
-  
-  
