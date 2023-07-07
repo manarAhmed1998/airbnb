@@ -29,7 +29,7 @@ import {
 import { HttpClientModule } from "@angular/common/http";
 import { ErrorComponent } from "./Cpmponents/error/error.component";
 import { RouterModule,Routes,ROUTES } from "@angular/router";
-import { AddPropertyComponent, AddPropertyModule } from "./Cpmponents/add-property/add-property.component";
+import { AddPropertyComponent } from "./Cpmponents/add-property/add-property.component";
 import { NotFoundComponent } from './Cpmponents/not-found/not-found.component';
 import { AmenitiesDasboardComponent } from "./Cpmponents/amenities-dasboard/amenities-dasboard.component";
 import { ChartsDashboardComponent } from "./Cpmponents/charts-dashboard/charts-dashboard.component";
@@ -47,17 +47,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatStepperModule } from '@angular/material/stepper';
 
 let routes:Routes=[
+  {path:'add-property' , component: AddPropertyComponent  },
+
   {path:'',component:CardsComponent},
   {path:'home',component:CardsComponent},
   {path:'cards',component:CardsComponent},
   {path:'cards/:id',component:CardDetailsComponent},
   {path:'**',component:ErrorComponent},
-  {path:'add-property' , component: AddPropertyComponent  }
 ]
 
 @NgModule({
   declarations: [    
-
     AppComponent,
     FooterComponent,
     HeaderComponent,
@@ -78,9 +78,9 @@ let routes:Routes=[
     HostReservationComponent,
     RoleDashboardComponent,
     RuleDashboardComponent,
+    AddPropertyComponent
   ],
   imports: [
-    AddPropertyModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

@@ -1,4 +1,4 @@
-import { Component,NgModule,OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import {FormBuilder,FormGroup, Validators, FormsModule, ReactiveFormsModule,  FormArray} from '@angular/forms';
 import {BreakpointObserver,Breakpoints} from '@angular/cdk/layout';
 import {StepperOrientation, MatStepperModule } from '@angular/material/stepper';
@@ -93,7 +93,6 @@ ngOnInit(): void {
   
   });
 
-  this.createAmenitiesCheckboxes();
 
 
 
@@ -118,17 +117,9 @@ createAmenitiesFormControls() {
     (this.thirdFormGroup.get('amenities') as FormArray).push(control);
   });
 }
-  createAmenitiesCheckboxes() {
-    const amenitiesFormGroup = this.thirdFormGroup.get('amenities') as FormGroup;
-    this.amenities.forEach((amenity) => {
-      amenitiesFormGroup.addControl(amenity, this._formBuilder.control(false));
-    });
-
-
-
-
   
-}
+  
+
 get amenitiesFormArray() {
   return this.thirdFormGroup.get('amenities.amenities') as FormArray;
 }
@@ -182,27 +173,27 @@ onCountrySelected(countryValue: string) {
       );
   }
   
-
-
 }
-@NgModule({
-  declarations: [AddPropertyComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatStepperModule,
-    MatButtonModule,
-    MatIconModule,
-    MatCardModule,
-    MatOptionModule,
-    MatSelectModule,
-    MatCheckboxModule,
-    MatRadioModule,
-    MaterialModule
-  ],
-  exports: [AddPropertyComponent]
-})
-export class AddPropertyModule { }
+
+// }
+// @NgModule({
+//   declarations: [AddPropertyComponent],
+//   imports: [
+//     CommonModule,
+//     FormsModule,
+//     ReactiveFormsModule,
+//     MatFormFieldModule,
+//     MatInputModule,
+//     MatStepperModule,
+//     MatButtonModule,
+//     MatIconModule,
+//     MatCardModule,
+//     MatOptionModule,
+//     MatSelectModule,
+//     MatCheckboxModule,
+//     MatRadioModule,
+//     MaterialModule
+//   ],
+//   exports: [AddPropertyComponent]
+// })
+// export class AddPropertyModule { }
