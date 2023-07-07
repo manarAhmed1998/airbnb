@@ -4,6 +4,7 @@ import { SignInComponent } from '../sign-in/sign-in.component';
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { MatDialog ,MatDialogConfig ,MatDialogRef} from '@angular/material/dialog';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class HeaderComponent implements OnInit{
   constructor
    (public dialog: MatDialog, 
     public dialogRef: MatDialogRef<HeaderComponent>,
-    private authenticationService:AuthenticationService   
+    private authenticationService:AuthenticationService ,
+    private router:Router  
     ) { }
   ngOnInit(): void {
       this.authenticationService.isLoggedIn$.subscribe((isLoggedIn)=>{
@@ -38,6 +40,10 @@ export class HeaderComponent implements OnInit{
       width:'744px',
       panelClass:'sign-Up'
     });
+  }
+  logout(){
+    localStorage.removeItem('token');
+    window.location.reload();
   }
 
 

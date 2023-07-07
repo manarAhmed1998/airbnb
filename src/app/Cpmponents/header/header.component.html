@@ -42,7 +42,7 @@
           <li><hr class="dropdown-divider"></li>
           <li *ngIf="isLoggedIn"><a class="dropdown-item" href="#">Reservations</a></li>
           <li><a class="dropdown-item" href="#">Help</a></li>
-          <li *ngIf="isLoggedIn"><a class="dropdown-item" href="#">Logout</a></li>
+          <li *ngIf="isLoggedIn"><button class="dropdown-item" (click)="logout()">Logout</button></li>
         </ul>
       </div>
    </li>
