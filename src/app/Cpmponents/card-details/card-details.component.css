@@ -1,5 +1,6 @@
 .container {
   position: static;
+  padding-bottom: 30px;
 }
 
 #largeimg1 {
