@@ -9,7 +9,7 @@ export class CardsService {
   constructor(private readonly myClient:HttpClient) {
    }
 
-   private readonly baseURL="";
+   private readonly baseURL="http://localhost:5073/api/Property";
 
    getAllCards(){
     return this.myClient.get(this.baseURL);
