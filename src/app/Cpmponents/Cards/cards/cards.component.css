@@ -130,7 +130,7 @@ ul {
  }
 }
 
-@media screen and (min-width:555px){
+@media screen and (min-width:550px){
   .container{
   max-width: 955px;
   display: grid;
