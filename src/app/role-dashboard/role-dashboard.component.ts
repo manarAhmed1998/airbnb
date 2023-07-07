@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./role-dashboard.component.css']
 })
 export class RoleDashboardComponent {
-
+  roles = [
+    { id: 1, role: 'guest'},
+    { id: 2, role: 'host'  }
+  ];
 }
