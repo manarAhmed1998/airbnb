@@ -6,6 +6,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatDialogModule ,MatDialogRef,MatDialogConfig,MatDialog} from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { SignInComponent } from '../sign-in/sign-in.component';
+import { SignUpDto } from '../types/SignUpDTO';
 
 @Component({
   selector: 'app-sign-up',
@@ -134,25 +135,38 @@ return'';
   }
 
 
-  submitSignUpForm() {
-    const formData = {
-      "name": this.signUpForm.get('nameControl')?.value,
-      "ssn": this.signUpForm.get('nationalIdControl')?.value?.toString(),
-      "email": this.signUpForm.get('emailControl')?.value,
-      "userName": this.signUpForm.get('usernameControl')?.value,
-      "password": this.signUpForm.get('passwordControl')?.value,
-      "dateOfBirth": "2023-07-04T19:16:54.546Z",
-      "profilePicture": "string",
-      "phoneNumber":this.signUpForm.get('phoneNumberControl')?.value?.toString() ,
-      "country": "Egypt",
-      "government": "Sharqia",
-      "city": "string",
-      "street": "string",
-      "longitude": "string",
-      "latitude": "string"
-    };
-
-    this.http.post('http://localhost:5012/api/Users/Register', formData)
+  submitSignUpForm(e:Event) {
+    e.preventDefault();
+    var user=new SignUpDto();
+    // var natId=this.signUpForm.controls.nationalIdControl.value??'';
+    // var num=parseInt(natId, 14);
+    user.email=this.signUpForm.controls.emailControl.value??'';
+    user.name=this.signUpForm.controls.nameControl.value??'';
+    user.ssn=this.signUpForm.controls.nationalIdControl.value??'';
+    user.userName=this.signUpForm.controls.usernameControl.value??'';
+    user.phoneNumber=this.signUpForm.controls.phoneNumberControl.value??'';
+    user.password=this.signUpForm.controls.passwordControl.value??'';
+    var password=this.signUpForm.controls.passwordControl.value??'';
+    var passwordConfirm=this.signUpForm.controls.passwordConfirmControl.value??'';
+    // const formData = {
+    //   "name": this.signUpForm.get('nameControl')?.value,
+    //   "ssn": this.signUpForm.get('nationalIdControl')?.value?.toString(),
+    //   "email": this.signUpForm.get('emailControl')?.value,
+    //   "userName": this.signUpForm.get('usernameControl')?.value,
+    //   "password": this.signUpForm.get('passwordControl')?.value,
+    //   "dateOfBirth": "2023-07-04T19:16:54.546Z",
+    //   "profilePicture": "string",
+    //   "phoneNumber":this.signUpForm.get('phoneNumberControl')?.value?.toString() ,
+    //   "country": "Egypt",
+    //   "government": "Sharqia",
+    //   "city": "string",
+    //   "street": "string",
+    //   "longitude": "string",
+    //   "latitude": "string"
+    // };
+    
+    if(password===passwordConfirm){
+      this.http.post('http://localhost:5073/api/Auth/Signup', user)
       .subscribe({
         next: (res) => {
           console.log('Sign-up successful!', res);
@@ -165,6 +179,7 @@ return'';
       }
         
       );
+    }
   }
   passwordMatch(control: AbstractControl): ValidationErrors | null {
     const password = control.get('passwordControl')?.value;
