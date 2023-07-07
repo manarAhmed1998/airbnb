@@ -7,20 +7,20 @@
             <div class="modal-header">
                 <h1 class="modal-title">Filters</h1>
             </div>
-
             <div class="modal-body">
                 <div class="content-container">
                   
-                    <!-- Range slider for price -->
-                    <div class="mb-3">
-                        <label for="priceRange" class="form-label">Select a price range Between 1 $ and 10.000 $ .</label>
-                        <input type="range" class="form-range" min="1" max="10000" step="1" id="priceRange">
-                    </div>
                     <div class="mb-3">
                         <!-- Price input -->
                         <label for="minPriceInput" class="form-label">Price:</label>
                         <input type="number" class="form-control value-input" id="minPriceInput" min="1" max="10000" value="">
                     </div>
+                    <div class="mb-3">
+                      <!-- Price input -->
+                      <label for="minPriceInput" class="form-label">Price:</label>
+                      <input type="number" class="form-control value-input" id="minPriceInput" min="1" max="10000" value="">
+                  </div>
+                  
                     <div id="errorDiv" class="text-danger"></div>
                 </div>
             </div>
@@ -254,73 +254,6 @@
                                     <p>Hotel</p>
                                 </button>
                         </div>
-                                
-                    <br><br>
-                    <hr>
-                    
-                    <!-- Amenities -->
-                        <h2 id="Amenities"> Amenities</h2>
-                        <div class="form-check-container">
-                            <div class="form-check-row">
-                              <div class="form-check2 d-inline-block">
-                                <input class="form-check-input" type="checkbox" value="" id="wifi">
-                                <label class="form-check-label" for="wifi">Wifi</label>
-                              </div>
-                            
-                              <div class="form-check2 d-inline-block">
-                                <input class="form-check-input" type="checkbox" value="" id="kitchen">
-                                <label class="form-check-label" for="kitchen">Kitchen</label>
-                              </div>
-                            </div>
-                            
-                            <div class="form-check-row">
-                              <div class="form-check2 d-inline-block">
-                                <input class="form-check-input" type="checkbox" value="" id="washer" >
-                                <label class="form-check-label" for="washer">Washer</label>
-                              </div>
-                            
-                              <div class="form-check2 d-inline-block">
-                                <input class="form-check-input" type="checkbox" value="" id="dryer" >
-                                <label class="form-check-label" for="dryer">Dryer</label>
-                              </div>
-                            </div>
-                            
-                            <div class="form-check-row">
-                              <div class="form-check2 d-inline-block">
-                                <input class="form-check-input" type="checkbox" value="" id="ac" >
-                                <label class="form-check-label" for="ac">Air conditioning</label>
-                              </div>
-                            
-                              <div class="form-check2 d-inline-block">
-                                <input class="form-check-input" type="checkbox" value="" id="checked" >
-                                <label class="form-check-label" for="checked">Checked checkbox</label>
-                              </div>
-                            </div>
-                            
-                            <div class="form-check-row">
-                              <div class="form-check2 d-inline-block">
-                                <input class="form-check-input" type="checkbox" value="" id="heating">
-                                <label class="form-check-label" for="heating">Heating</label>
-                              </div>
-                            
-                              <div class="form-check2 d-inline-block">
-                                <input class="form-check-input" type="checkbox" value="" id="tv" >
-                                <label class="form-check-label" for="tv">TV</label>
-                              </div>
-                            </div>
-                            
-                            <div class="form-check-row">
-                              <div class="form-check2 d-inline-block">
-                                <input class="form-check-input" type="checkbox" value="" id="hairdryer">
-                                <label class="form-check-label" for="hairdryer">Hair dryer</label>
-                              </div>
-                            
-                              <div class="form-check2 d-inline-block">
-                                <input class="form-check-input" type="checkbox" value="" id="iron" >
-                                <label class="form-check-label" for="iron">Iron</label>
-                              </div>
-                            </div>
-                          </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" (click)="applyFilters()">Apply</button>
