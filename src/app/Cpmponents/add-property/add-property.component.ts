@@ -197,10 +197,12 @@ onCountrySelected(countryValue: string) {
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatOptionModule ,
-    MatSelectModule 
-  ]
-}) 
-export class AddPropertyModule{
-
-}
+    MatOptionModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MaterialModule
+  ],
+  exports: [AddPropertyComponent]
+})
+export class AddPropertyModule { }

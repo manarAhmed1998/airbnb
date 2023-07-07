@@ -29,7 +29,7 @@ import {
 import { HttpClientModule } from "@angular/common/http";
 import { ErrorComponent } from "./Cpmponents/error/error.component";
 import { RouterModule,Routes,ROUTES } from "@angular/router";
-import { AddPropertyComponent } from "./Cpmponents/add-property/add-property.component";
+import { AddPropertyComponent, AddPropertyModule } from "./Cpmponents/add-property/add-property.component";
 import { NotFoundComponent } from './Cpmponents/not-found/not-found.component';
 import { AmenitiesDasboardComponent } from "./Cpmponents/amenities-dasboard/amenities-dasboard.component";
 import { ChartsDashboardComponent } from "./Cpmponents/charts-dashboard/charts-dashboard.component";
@@ -56,7 +56,8 @@ let routes:Routes=[
 ]
 
 @NgModule({
-  declarations: [
+  declarations: [    
+
     AppComponent,
     FooterComponent,
     HeaderComponent,
@@ -76,9 +77,10 @@ let routes:Routes=[
     YourPropertiesComponent,
     HostReservationComponent,
     RoleDashboardComponent,
-    RuleDashboardComponent
+    RuleDashboardComponent,
   ],
   imports: [
+    AddPropertyModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -93,7 +95,6 @@ let routes:Routes=[
     MaterialModule,
     MatDialogModule,
     HttpClientModule,
-    
     MatSelectModule,
     MatCheckboxModule,
     MatRadioModule,
