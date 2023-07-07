@@ -6,6 +6,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatDialogModule ,MatDialogRef,MatDialogConfig,MatDialog} from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { SignUpComponent } from '../sign-up/sign-up.component';
+import { Token } from '@angular/compiler';
+import { LoginDto } from '../types/LoginDto';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -13,7 +17,12 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent {
-  constructor(private http: HttpClient, public dialog: MatDialog, public dialogRef: MatDialogRef<SignInComponent>){
+  constructor(private authService:AuthenticationService 
+    ,private http: HttpClient, 
+    public dialog: MatDialog, 
+    public dialogRef: MatDialogRef<SignInComponent>,
+    private router:Router
+    ){
 
 }
 
@@ -29,7 +38,13 @@ signInForm = new FormGroup({
 
 });
 
-
+// handleSubmit(e:Event){
+//   e.preventDefault();
+//   var credentials=new LoginDto();
+//   credentials.email=this.signInForm.controls.emailControl.value??'';
+//   credentials.password=this.signInForm.controls.passwordControl.value??'';
+  
+// }
 getPasswordErrorMessage(){
   if (this.signInForm.get('passwordControl')?.hasError('required')){
     return 'Password is required';
@@ -75,25 +90,16 @@ getPasswordErrorMessage(){
 
 
 
-submitSignInForm() {
-  const formData = {
-    emailControl: this.signInForm.get('emailControl')?.value,
-    passwordControl: this.signInForm.get('passwordControl')?.value
-  };
-  console.log('submitSignInForm:', formData);
+submitSignInForm(e:Event) {
+ e.preventDefault();
+ var credentials=new LoginDto();
+ credentials.email=this.signInForm.controls.emailControl.value??'';
+ credentials.password=this.signInForm.controls.passwordControl.value??'';
 
-  this.http.post('https://example.com/api/authenticate', formData)
-    .subscribe({
-      next:(res)=>{
-        console.log('Sign-in successful!', res);
-        // handle successful authentication (e.g. store the access token or cookie)
-      },
-      error:(err)=>{
-        console.error('Sign-in failed!', err);
-        // display an error message or handle the error in some other way
-      }
-    }  
-    );
+ this.authService.Login(credentials).subscribe((tokenDto)=>{
+  console.log(tokenDto);
+  this.router.navigateByUrl('/');
+ })
 }
 
 
@@ -101,7 +107,6 @@ openSignUpDialog(): void {
   this.dialogRef.close();
   const dialogRef = this.dialog.open(SignUpComponent,{
     width:'744px'
-
   });
 }
   }
