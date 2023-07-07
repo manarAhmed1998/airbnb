@@ -36,6 +36,8 @@ import { ChartsDashboardComponent } from "./Cpmponents/charts-dashboard/charts-d
 import { NavbarDashboardComponent
  } from "./Cpmponents/navbar-dashboard/navbar-dashboard.component";
 import { DashboardComponent } from './Cpmponents/dashboard/dashboard.component';
+import { YourPropertiesComponent } from './Cpmponents/your-properties/your-properties.component';
+import { HostReservationComponent } from './Cpmponents/host-reservation/host-reservation.component';
 
 let routes:Routes=[
   {path:'',component:CardsComponent},
@@ -64,7 +66,9 @@ let routes:Routes=[
     ChartsDashboardComponent,
     ErrorComponent,
     NotFoundComponent,
-    DashboardComponent
+    DashboardComponent,
+    YourPropertiesComponent,
+    HostReservationComponent
   ],
   imports: [
     BrowserModule,
