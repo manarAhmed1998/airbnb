@@ -1,67 +1,62 @@
 <style>
   ::ng-deep .cdk-overlay-container {
-    z-index: 2000;}
+    z-index: 2000;
+  }
 </style>
-  <!-- Modal -->
-  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: rgb(213, 34, 34);"> Book unique home and experiences</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form id="searchForm">
-                <label class="form-select-label" for="Default select example">Where</label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Any Where</option>
-                    <option value="1">Alexandria</option>
-                    <option value="2">Aswan</option>
-                    <option value="3">Asyut</option>
-                    <option value="4">Beheira</option>
-                    <option value="5">Beni Suef</option>
-                    <option value="6">Cairo</option>
-                    <option value="7">Dakahlia</option>
-                    <option value="8">Damietta</option>
-                    <option value="9">Faiyum</option>
-                    <option value="10">Gharbia</option>
-                    <option value="11">Giza</option>
-                    <option value="12">Ismailia</option>
-                    <option value="13">Kafr El Sheikh</option>
-                    <option value="14">Luxor</option>
-                    <option value="15">Matruh</option>
-                    <option value="16">Minya</option>
-                    <option value="17">Monufia</option>
-                    <option value="18">New Valley</option>
-                    <option value="19">North Sinai</option>
-                    <option value="20">Port Said</option>
-                    <option value="21">Qalyubia</option>
-                    <option value="22">Qena</option>
-                    <option value="23">Red Sea</option>
-                    <option value="24">Sharqia</option>
-                    <option value="25">Sohag</option>
-                    <option value="26">South Sinai</option>
-                    <option value="27">Suez</option>
-                  </select><br>
-
-                               <!-- datePicker -->
-                               <mat-form-field class="container">
-                                <mat-label>Enter a date range</mat-label>
-                                <mat-date-range-input [rangePicker]="picker">
-                                  <input matStartDate placeholder="Start date">
-                                  <input matEndDate placeholder="End date">
-                                </mat-date-range-input>
-                                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                <mat-date-range-picker #picker></mat-date-range-picker>
-                              </mat-form-field>
-                        </form>
-            
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger">Search</button>
-        </div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="searchModal"
+  tabindex="-1"
+  aria-labelledby="searchModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1
+          class="modal-title fs-5"
+          id="exampleModalLabel"
+          style="color: rgb(213, 34, 34)"
+        >
+          Book unique home and experiences
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="searchForm">
+          <div class="mb-3">
+            <!-- Price input -->
+            <label for="cityBtn" class="form-label">Where To?</label>
+            <input class="form-control value-input" id="cityBtn" />
+          </div>
+          <!-- datePicker -->
+          <mat-form-field class="container">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate placeholder="Start date" />
+              <input matEndDate placeholder="End date" />
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-danger">Search</button>
       </div>
     </div>
   </div>
+</div>
