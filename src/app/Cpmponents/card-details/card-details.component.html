@@ -158,22 +158,30 @@
         {{card.rating}} </span
       ><br /><br />
       <form>
-        <!-- datePicker -->
-        <mat-form-field class="container">
-          <mat-label>Enter a date range</mat-label>
-          <mat-date-range-input [rangePicker]="picker">
-            <input matStartDate placeholder="Start date" />
-            <input matEndDate placeholder="End date" />
-          </mat-date-range-input>
-          <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle
-            matSuffix
-            [for]="picker"
-          ></mat-datepicker-toggle>
-          <mat-date-range-picker
-            #picker
-          ></mat-date-range-picker> </mat-form-field
-        ><br /><br />
+        <mat-form-field>
+          <mat-label>Choose a check-in date</mat-label>
+          <input matInput [min]="minDate" [matDatepicker]="checkInPicker"
+              placeholder="Check-in" (dateInput)="onCheckInDateChange()" [(ngModel)]="startDate">
+          <mat-hint>Disabled dates are reserved.</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+          <mat-datepicker #checkInPicker></mat-datepicker>
+      </mat-form-field>
+             <!-- datePicker -->
+             <!-- <mat-form-field class="container">
+              <mat-label>Enter a date range</mat-label>
+              <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate placeholder="Start date" [min]="minDate" [(ngModel)]="startDate" (dateInput)="onCheckInDateChange()"/>
+                <input matEndDate placeholder="End date" [(ngModel)]="endDate" (dateInput)="onCheckInDateChange()"/>
+              </mat-date-range-input>
+              <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-date-range-picker
+                #picker
+              ></mat-date-range-picker> </mat-form-field
+            ><br /><br />  -->
 
         <div class="col-12 form-outline">
           <label class="form-label" for="guestNum">Guests</label>
@@ -184,7 +192,7 @@
         <button type="submit" class="container btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">Reserve</button>
         <hr />
         <span style="font-weight: bold; font-size: large">Total</span>
-        <span id="total">$<span>308</span></span>
+        <span id="total">400<span>EGP</span></span>
       </form>
     </div>
   </div>
