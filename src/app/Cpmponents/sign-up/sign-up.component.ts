@@ -7,6 +7,7 @@ import { MatDialogModule ,MatDialogRef,MatDialogConfig,MatDialog} from '@angular
 import { HttpClient } from '@angular/common/http';
 import { SignInComponent } from '../sign-in/sign-in.component';
 import { SignUpDto } from '../types/SignUpDto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,19 +15,11 @@ import { SignUpDto } from '../types/SignUpDto';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
-constructor(private http: HttpClient, public dialog: MatDialog, public dialogRef: MatDialogRef<SignInComponent>){
+constructor(private http: HttpClient, public dialog: MatDialog, public dialogRef: MatDialogRef<SignInComponent>, private router:Router){
 
 }
   hide = true;
-
-  // emailControl : new FormControl('', [Validators.required, Validators.email]);
-  // phoneCountryControl = new FormControl('', Validators.required);
-  // phoneNumberControl = new FormControl('', [Validators.required, Validators.pattern(/^\d{10}$/)]);
-  // nationalIdControl = new FormControl('', [Validators.required, Validators.minLength(14), Validators.maxLength(14)]);
-  // usernameControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9_]*$'), Validators.minLength(3), Validators.maxLength(20)]);
-
-  signUpForm = new FormGroup({
-    
+    signUpForm = new FormGroup({
     nameControl : new FormControl('', [ Validators.required ,Validators.maxLength(15)   ]  ) , 
     emailControl: new FormControl('', [Validators.required, Validators.email ,Validators.minLength(15)]),
     phoneCountryControl: new FormControl('', Validators.required),
@@ -148,29 +141,13 @@ return'';
     user.password=this.signUpForm.controls.passwordControl.value??'';
     var password=this.signUpForm.controls.passwordControl.value??'';
     var passwordConfirm=this.signUpForm.controls.passwordConfirmControl.value??'';
-    // const formData = {
-    //   "name": this.signUpForm.get('nameControl')?.value,
-    //   "ssn": this.signUpForm.get('nationalIdControl')?.value?.toString(),
-    //   "email": this.signUpForm.get('emailControl')?.value,
-    //   "userName": this.signUpForm.get('usernameControl')?.value,
-    //   "password": this.signUpForm.get('passwordControl')?.value,
-    //   "dateOfBirth": "2023-07-04T19:16:54.546Z",
-    //   "profilePicture": "string",
-    //   "phoneNumber":this.signUpForm.get('phoneNumberControl')?.value?.toString() ,
-    //   "country": "Egypt",
-    //   "government": "Sharqia",
-    //   "city": "string",
-    //   "street": "string",
-    //   "longitude": "string",
-    //   "latitude": "string"
-    // };
-    
+
     if(password===passwordConfirm){
       this.http.post('http://localhost:5073/api/Auth/Signup', user)
       .subscribe({
         next: (res) => {
           console.log('Sign-up successful!', res);
-          // navigate to a success page or display a success message
+          this.router.navigateByUrl('/');
         },
         error:(err)=> {
           console.error('Sign-up failed!', err);

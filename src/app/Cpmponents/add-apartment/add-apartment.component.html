@@ -1,1 +1,127 @@
-<p>add-apartment works!</p>
+<mat-card>
+    <mat-card-content>
+      <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <mat-form-field>
+              <mat-label>Property Type</mat-label>
+              <mat-select formControlName="propertyType">
+                <mat-option value="apartment">Apartment</mat-option>
+                <mat-option value="house">House</mat-option>
+                <mat-option value="villa">Villa</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+  
+          <div class="col-lg-6 col-md-6">
+            <mat-form-field>
+              <input matInput type="text" formControlName="pricePerNight" placeholder="Price per Night" />
+            </mat-form-field>
+            <mat-error *ngIf="propertyForm.get('pricePerNight')?.invalid && propertyForm.get('pricePerNight')?.touched">
+              Price per Night is required and must be a positive number
+            </mat-error>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <mat-form-field>
+              <input matInput type="text" formControlName="insuranceTax" placeholder="Insurance Tax" />
+            </mat-form-field>
+            <mat-error *ngIf="propertyForm.get('insuranceTax')?.invalid && propertyForm.get('insuranceTax')?.touched">
+              Insurance Tax is required and must be a positive number
+            </mat-error>
+          </div>
+  
+          <div class="col-lg-6 col-md-6">
+            <mat-form-field>
+              <textarea matInput formControlName="description" placeholder="Description" rows="3"></textarea>
+            </mat-form-field>
+            <mat-error *ngIf="propertyForm.get('description')?.invalid && propertyForm.get('description')?.touched">
+              Description must be between 10 and 25 characters
+            </mat-error>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <mat-form-field>
+              <input matInput type="text" formControlName="guestNumbers" placeholder="Guest Numbers" />
+            </mat-form-field>
+            <mat-error *ngIf="propertyForm.get('guestNumbers')?.invalid && propertyForm.get('guestNumbers')?.touched">
+              Guest Numbers is required, must be a positive number, and cannot exceed 10
+            </mat-error>
+          </div>
+  
+          <div class="col-lg-6 col-md-6">
+            <mat-form-field>
+              <mat-label>Country</mat-label>
+              <mat-select formControlName="country" (selectionChange)="onCountryChange()">
+                <mat-option *ngFor="let country of countries" [value]="country">{{ country }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-error *ngIf="propertyForm.get('country')?.invalid && propertyForm.get('country')?.touched">
+              Country is required
+            </mat-error>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <mat-form-field>
+              <mat-label>City</mat-label>
+              <mat-select formControlName="city">
+                <mat-option *ngFor="let city of filteredCities" [value]="city">{{ city }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-error *ngIf="propertyForm.get('city')?.invalid && propertyForm.get('city')?.touched">
+              City is required
+            </mat-error>
+          </div>
+  
+          <div class="col-lg-6 col-md-6">
+            <mat-form-field>
+              <input matInput formControlName="street" placeholder="Street" />
+            </mat-form-field>
+            <mat-error *ngIf="propertyForm.get('street')?.invalid && propertyForm.get('street')?.touched">
+              Street is required
+            </mat-error>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <mat-form-field>
+              <input matInput type="text" formControlName="noOfBeds" placeholder="Number of Beds" />
+            </mat-form-field>
+            <mat-error *ngIf="propertyForm.get('noOfBeds')?.invalid && propertyForm.get('noOfBeds')?.touched">
+              Number of Beds is required and must be a positive number
+            </mat-error>
+          </div>
+  
+          <div class="col-lg-6 col-md-6">
+            <mat-form-field>
+              <input matInput type="text" formControlName="noOfBedRooms" placeholder="Number of Bedrooms" />
+            </mat-form-field>
+            <mat-error *ngIf="propertyForm.get('noOfBedRooms')?.invalid && propertyForm.get('noOfBedRooms')?.touched">
+              Number of Bedrooms is required and must be a positive number
+            </mat-error>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <mat-form-field>
+              <input matInput type="text" formControlName="noOfBathRooms" placeholder="Number of Bathrooms" />
+            </mat-form-field>
+            <mat-error *ngIf="propertyForm.get('noOfBathRooms')?.invalid && propertyForm.get('noOfBathRooms')?.touched">
+              Number of Bathrooms is required and must be a positive number
+            </mat-error>
+          </div>
+        </div>
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="propertyForm.invalid">Submit</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

@@ -45,6 +45,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { MatStepperModule } from '@angular/material/stepper';
+import { AddApartmentComponent } from './Cpmponents/add-apartment/add-apartment.component';
 import { ReservationsComponent } from './Cpmponents/reservations/reservations.component';
 
 let routes:Routes=[
@@ -55,6 +56,7 @@ let routes:Routes=[
   {path:'cards/:id',component:CardDetailsComponent},
   {path:'your-property',component:YourPropertiesComponent},
   {path:'host-reservations',component:HostReservationComponent},
+  {path:'add-apartment',component:AddApartmentComponent},
   {path:'add-property',component:AddPropertyComponent},
   {path:'reservations',component:ReservationsComponent},
   {path:'**',component:ErrorComponent}

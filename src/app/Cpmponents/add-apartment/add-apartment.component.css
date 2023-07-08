@@ -1,0 +1,12 @@
+.form-field {
+    width: calc(50% - 4px);
+    margin-right: 2px;
+    margin-bottom: 2px;
+  }
+  
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
