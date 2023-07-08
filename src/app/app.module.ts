@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { Component, NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -53,7 +53,8 @@ let routes:Routes=[
   {path:'home',component:CardsComponent},
   {path:'cards',component:CardsComponent},
   {path:'cards/:id',component:CardDetailsComponent},
-  {path:'**',component:ErrorComponent},
+  {path:'your-property',component:YourPropertiesComponent},
+  {path:'**',component:ErrorComponent}
 ]
 
 @NgModule({
