@@ -37,8 +37,8 @@ export class AddPropertyComponent implements OnInit {
   secondFormGroup!: FormGroup;
   thirdFormGroup!: FormGroup;
   fourthFormGroup!: FormGroup;
-
-
+  fifthFormGroup!: FormGroup;
+i:number=0;
   propertyTypes = ["House", "Apartment"];
   countries = [
     { value: "Egypt", name: "Egypt" },
@@ -53,7 +53,13 @@ export class AddPropertyComponent implements OnInit {
   Amenities = ["WiFi", "TV", "AC", "Kitchen", "Parking"];
   houseRules = ["No smoking", "No parties", "No pets"];
 
+ 
+   
+    
+ 
   stepperOrientation!: Observable<StepperOrientation>;
+
+
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -80,43 +86,40 @@ export class AddPropertyComponent implements OnInit {
         [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)(\.\d+)?$/)],
       ],
       description: ["", Validators.maxLength(250)],
-
-     
     });
     this.secondFormGroup = this._formBuilder.group({
       country: ["", Validators.required],
       city: ["", Validators.required],
       address: ["", Validators.required],
     });
-   
-    this.thirdFormGroup = this._formBuilder.group({
-  
-      amenities: this._formBuilder.array(
-        this.Amenities.map(() => false)
-      ),
-    });
 
+    this.thirdFormGroup = this._formBuilder.group({
+      amenities: this._formBuilder.array(this.Amenities.map(() => false)),
+    });
 
     this.fourthFormGroup = this._formBuilder.group({
-  
-      rules: this._formBuilder.array(
-        this.houseRules.map(() => false)
-      ),
+      rules: this._formBuilder.array(this.houseRules.map(() => false)),
     });
+    this.fifthFormGroup = this._formBuilder.group({
     
+    });
 
     this.stepperOrientation = this.getStepperOrientation();
+    
   }
+  
+  
 
+     
+  
+  
   get amenitiesFormArray(): FormArray {
-    return this.thirdFormGroup.get('amenities') as FormArray;
+    return this.thirdFormGroup.get("amenities") as FormArray;
   }
   filteredCities: string[] = [];
 
-
   getCities(country: string) {
-    return   this.filteredCities = this.cities[country];
-
+    return (this.filteredCities = this.cities[country]);
   }
 
   onCountrySelected(countryValue: string) {
@@ -136,4 +139,18 @@ export class AddPropertyComponent implements OnInit {
         })
       );
   }
+
+
+onFileSelected(event: any, room: Room) {
+  const file: File = event.target.files[0];
+  const url: string = URL.createObjectURL(file);
+  room.roomImage = url;
+}
+}
+interface Room {
+  type: string;
+  numBeds: string;
+  roomCount: string;
+  roomImage: string;
+  bedroom?: boolean;
 }
