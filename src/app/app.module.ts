@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { Component, NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -40,19 +40,26 @@ import { HostReservationComponent } from './Cpmponents/host-reservation/host-res
 import { RoleDashboardComponent } from './Cpmponents/role-dashboard/role-dashboard.component';
 import { RuleDashboardComponent } from './Cpmponents/rule-dashboard/rule-dashboard.component';
 
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { MatStepperModule } from '@angular/material/stepper';
+
 let routes:Routes=[
+  {path:'add-property' , component: AddPropertyComponent  },
+
   {path:'',component:CardsComponent},
   {path:'home',component:CardsComponent},
   {path:'cards',component:CardsComponent},
   {path:'cards/:id',component:CardDetailsComponent},
-  {path:'add-property',component:AddPropertyComponent},
-  {path:'results-not-found',component:NotFoundComponent},  
-  //error should be last
+  {path:'your-property',component:YourPropertiesComponent},
+  {path:'host-reservations',component:HostReservationComponent},
   {path:'**',component:ErrorComponent}
 ]
 
 @NgModule({
-  declarations: [
+  declarations: [    
     AppComponent,
     FooterComponent,
     HeaderComponent,
@@ -68,10 +75,12 @@ let routes:Routes=[
     ErrorComponent,
     NotFoundComponent,
     DashboardComponent,
+    ErrorComponent,
     YourPropertiesComponent,
     HostReservationComponent,
     RoleDashboardComponent,
-    RuleDashboardComponent
+    RuleDashboardComponent,
+    AddPropertyComponent
   ],
   imports: [
     BrowserModule,
@@ -88,6 +97,11 @@ let routes:Routes=[
     MaterialModule,
     MatDialogModule,
     HttpClientModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatCardModule,
+    MatStepperModule,
     RouterModule.forRoot(routes)
   ],
   providers: [{ provide: MatDialogRef, useValue: {} }],

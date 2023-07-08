@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import{ ActivatedRoute }from '@angular/router';
 import { CardsService } from 'src/app/services/cards.service';
 
@@ -7,11 +7,13 @@ import { CardsService } from 'src/app/services/cards.service';
   templateUrl: './card-details.component.html',
   styleUrls: ['./card-details.component.css']
 })
-export class CardDetailsComponent {
+
+//oninit starts after constructor to ensure that the vars have been intialized first(after constructor)
+export class CardDetailsComponent implements OnInit{
   id=0;
   card:any;
 
-  constructor(myRoute:ActivatedRoute,myService:CardsService){
+  constructor(myRoute:ActivatedRoute, myService:CardsService){
 
     //specifying the id of each card
     this.id=myRoute.snapshot.params["id"];
@@ -27,5 +29,8 @@ export class CardDetailsComponent {
         complete:()=>{}
       }
     )
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 }
