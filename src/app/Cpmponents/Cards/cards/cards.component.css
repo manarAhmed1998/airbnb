@@ -112,3 +112,7 @@ div p #Price {
 #main-caurosel:hover .like-icon {
   visibility: visible;
 }
+
+#main-caurosel{
+  width:fit-content !important;
+}

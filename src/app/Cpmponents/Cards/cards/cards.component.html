@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row">
-      <div class=" col-md-4 col-sm-6 " *ngFor="let c of cards">
-        <div id="main-caurosel" data-bs-ride="false" class="carousel slide">
+  <div class="row d-flex">
+      <div class="col-3" *ngFor="let c of cards">
+        <div id="main-caurosel" data-bs-ride="false" class="carousel slide" >
           <!-- carroussel indicators -->
           <ol class="carousel-indicators">
             <button
@@ -26,7 +26,7 @@
             ></button>
           </ol>
           <!-- wrapper for slides -->
-          <div class="carousel-inner">
+          <div class="carousel-inner" >
             <!-- images -->
             <div class="carousel-item active">
               <img
