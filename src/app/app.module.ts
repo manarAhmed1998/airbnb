@@ -45,7 +45,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { MatStepperModule } from '@angular/material/stepper';
-import { AddApartmentComponent } from './add-apartment/add-apartment.component';
+import { AddApartmentComponent } from './Cpmponents/add-apartment/add-apartment.component';
 
 let routes:Routes=[
   {path:'add-property' , component: AddPropertyComponent  },
