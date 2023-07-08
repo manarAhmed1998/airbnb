@@ -27,6 +27,7 @@ import { MatCard, MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { MatOptionModule } from "@angular/material/core";
 import { AddPropertyDto } from "../types/AddPropertyDto";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-add-property",
@@ -39,8 +40,7 @@ export class AddPropertyComponent implements OnInit {
   thirdFormGroup!: FormGroup;
   fourthFormGroup!: FormGroup;
   fifthFormGroup!: FormGroup;
-
-  i: number = 0;
+i:number=0;
   propertyTypes = ["House", "Apartment"];
   countries = [
     { value: "Egypt", name: "Egypt" },
@@ -55,7 +55,13 @@ export class AddPropertyComponent implements OnInit {
   Amenities = ["WiFi", "TV", "AC", "Kitchen", "Parking"];
   houseRules = ["No smoking", "No parties", "No pets"];
 
+ 
+   
+    
+ 
   stepperOrientation!: Observable<StepperOrientation>;
+
+
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -96,35 +102,38 @@ export class AddPropertyComponent implements OnInit {
     this.fourthFormGroup = this._formBuilder.group({
       rules: this._formBuilder.array(this.houseRules.map(() => false)),
     });
-
     this.fifthFormGroup = this._formBuilder.group({
-      rooms: this._formBuilder.array([]) // Initialize the rooms form array as an empty array
     });
 
     this.stepperOrientation = this.getStepperOrientation();
+    
   }
-
-  save() {
-    var propertyToAdd = new AddPropertyDto();
+  
+  save(){
+    var propertyToAdd=new AddPropertyDto();
     const firstformValues = this.firstFormGroup.value;
     const secondformValues = this.secondFormGroup.value;
     const thirdormValues = this.thirdFormGroup.value;
     const fourthformValues = this.fourthFormGroup.value;
     const fifthformValues = this.fifthFormGroup.value;
-    propertyToAdd.propertyType = firstformValues.propertyType;
-    propertyToAdd.pricePerNight = firstformValues.pricePerNight;
-    propertyToAdd.insuranceTax = firstformValues.insuranceTax;
-    propertyToAdd.description = firstformValues.description;
-    propertyToAdd.country = secondformValues.country;
-    propertyToAdd.city = secondformValues.city;
-    propertyToAdd.street = secondformValues.address;
-    propertyToAdd.PropertyAmenities = thirdormValues.amenities;
-    propertyToAdd.propertyRules = fourthformValues.rules;
-    propertyToAdd.rooms = fifthformValues.rooms; // Use the rooms value from the form group
-    propertyToAdd.propertyTitle = firstformValues.propertyTitle;
+    propertyToAdd.propertyType=firstformValues.propertyType;
+    propertyToAdd.pricePerNight=firstformValues.pricePerNight;
+    propertyToAdd.insuranceTax=firstformValues.insuranceTax;
+    propertyToAdd.description=firstformValues.description;
+    propertyToAdd.country=secondformValues.country;
+    propertyToAdd.city=secondformValues.city;
+    propertyToAdd.street=secondformValues.address;
+    propertyToAdd.PropertyAmenities=thirdormValues.amenities;
+    propertyToAdd.propertyRules=fourthformValues.rules;
+    propertyToAdd.rooms=fifthformValues.room;
+    propertyToAdd.propertyTitle;
     console.log(propertyToAdd);
   }
 
+
+     
+  
+  
   get amenitiesFormArray(): FormArray {
     return this.thirdFormGroup.get("amenities") as FormArray;
   }
@@ -150,33 +159,24 @@ export class AddPropertyComponent implements OnInit {
           }
         })
       );
+
+      
   }
 
-  onFileSelected(event: any, room: Room) {
-    const file: File = event.target.files[0];
-    const url: string = URL.createObjectURL(file);
-    room.roomImage = url;
+  saveForm() {
+      
   }
 
-  addRoom() {
-    const roomsFormArray = this.fifthFormGroup.get('rooms') as FormArray;
-    roomsFormArray.push(this.createRoomGroup());
-    console.log(roomsFormArray.value);
-  }
-
-  createRoomGroup(): FormGroup {
-    return this._formBuilder.group({
-      type: ["", Validators.required],
-      numBeds: ["", Validators.required],
-      roomCount: ["", Validators.required],
-      roomImage: [""]
-    });
-  }
+onFileSelected(event: any, room: Room) {
+  const file: File = event.target.files[0];
+  const url: string = URL.createObjectURL(file);
+  room.roomImage = url;
 }
-
+}
 interface Room {
   type: string;
   numBeds: string;
   roomCount: string;
   roomImage: string;
+  bedroom?: boolean;
 }
