@@ -202,12 +202,15 @@
                           <mat-label>City</mat-label>
                           <mat-select formControlName="city" required>
                             <mat-option
-                              *ngFor="let city of filteredCities "
+                              *ngFor="let city of filteredCities"
                               [value]="city"
                               >{{ city }}
                             </mat-option>
                           </mat-select>
-                          <mat-error *ngIf="secondFormGroup.get('city')?.invalid">Please select a city</mat-error>
+                          <mat-error
+                            *ngIf="secondFormGroup.get('city')?.invalid"
+                            >Please select a city</mat-error
+                          >
                         </mat-form-field>
 
                         <mat-form-field class="col-lg-12 col-md-10">
@@ -229,12 +232,29 @@
                       </div>
                     </mat-card-content>
                   </mat-card>
+                  <div class="row">
+                    <div class="button-container">
+                      <mat-card>
+                        <mat-card-actions>
+                          <button
+                            mat-button
+                            matStepperBack
+                            class="stepper-button-left"
+                          >
+                            Back
+                          </button>
+                          <button
+                            mat-button
+                            matStepperNext
+                            class="stepper-button-right"
+                          >
+                            Next
+                          </button>
+                        </mat-card-actions>
+                      </mat-card>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              <div class="button-container">
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
               </div>
             </div>
           </form>
@@ -250,13 +270,36 @@
                       <div class="row">
                         <div formArrayName="amenities">
                           <div *ngFor="let amenity of Amenities; let i = index">
-                            <mat-checkbox [formControlName]="i">{{ amenity }}</mat-checkbox>
+                            <mat-checkbox [formControlName]="i">{{
+                              amenity
+                            }}</mat-checkbox>
                           </div>
                         </div>
-      
                       </div></mat-card-content
                     ></mat-card
                   >
+                  <div class="row">
+                    <div class="button-container">
+                      <mat-card>
+                        <mat-card-actions>
+                          <button
+                            mat-button
+                            matStepperBack
+                            class="stepper-button-left"
+                          >
+                            Back
+                          </button>
+                          <button
+                            mat-button
+                            matStepperNext
+                            class="stepper-button-right"
+                          >
+                            Next
+                          </button>
+                        </mat-card-actions>
+                      </mat-card>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -272,10 +315,11 @@
                       <div class="row">
                         <div formArrayName="rules">
                           <div *ngFor="let rule of houseRules; let i = index">
-                            <mat-checkbox [formControlName]="i">{{ rule }}</mat-checkbox>
+                            <mat-checkbox [formControlName]="i">{{
+                              rule
+                            }}</mat-checkbox>
                           </div>
                         </div>
-      
                       </div></mat-card-content
                     ></mat-card
                   >
@@ -284,6 +328,80 @@
             </div>
           </form>
         </mat-step>
+        <mat-step [stepControl]="fifthFormGroup" label="Add Rooms">
+          <div class="row mb-3">
+            <div class="col-3">
+              <label for="room-type">Room Type</label>
+              <select id="room-type" name="room-type">
+                <option value="bedroom">Bedroom</option>
+                <option value="bathroom">Bathroom</option>
+                <option value="livingroom">Living Room</option>
+              </select>
+            </div>
+            <div class="col-3" id="beds-container" style="display:block;">
+              <label for="beds">Number of Beds</label>
+              <input type="number" id="beds" name="beds" min="1" max="10" />
+            </div>
+            <div class="col-3">
+              <label for="photos">Photos to Upload</label>
+              <input type="file" id="photos" name="photos" multiple />
+            </div>
+            <div class="row">
+              <div class="button-container">
+              <button class="btn btn-primary" id="add-room">Add Another Room</button>
+              <button class="btn btn-primary" id="save-room">Save Room</button>
+              <button class="btn btn-primary" id="save-all">Save All</button>
+              <button class="btn btn-danger" id="delete-room">Delete Room</button>
+            </div>
+          </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12">
+              <p id="room-counter"></p>
+            </div>
+          </div>
+          
+          <script>
+            const roomTypes = [
+              { type: 'bedroom', details: { type: 'Bedroom' } },
+              { type: 'bathroom', details: { type: 'Bathroom' } },
+              { type: 'livingroom', details: { type: 'Living Room' } }
+            ];
+            
+            let roomCounter = 1;
+            
+            document.getElementById('room-type').addEventListener('change', function() {
+              const bedsContainer = document.getElementById('beds-container');
+              if (this.value === 'bedroom') {
+                bedsContainer.style.display = 'block';
+              } else {
+                bedsContainer.style.display = 'none';
+              }
+            });
+            
+            document.getElementById('add-room').addEventListener('click', function() {
+              const roomCounterEl = document.getElementById('room-counter');
+              const currentRooms = roomCounterEl.textContent || '';
+              const roomType = document.getElementById('room-type').value;
+              const roomTypeDetails = roomTypes.find((type) => type.type === roomType)?.details.type || '';
+              roomCounter++;
+              roomCounterEl.textContent = `${currentRooms}\n${roomCounter} ${roomTypeDetails}`;
+            });
+            
+            document.getElementById('save-room').addEventListener('click', function() {
+              // Implement save room functionality here
+            });
+            
+            document.getElementById('save-all').addEventListener('click', function() {
+              // Implement save all functionality here
+            });
+            
+            document.getElementById('delete-room').addEventListener('click', function() {
+              // Implement delete room functionality here
+            });
+          </script>
+        </mat-step>
+        
         <mat-step>
           <ng-template matStepLabel>Done</ng-template>
           <p>You are now done.</p>

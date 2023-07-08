@@ -68,6 +68,14 @@
     border: none;
   }
   
+  .stepper-button-left {
+    margin-right: auto;  }
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  .stepper-button-right {
+margin-left: auto;  }
   .mat-step-header-completed .mat-step-icon .mat-icon {
     color: #fff;
   }
