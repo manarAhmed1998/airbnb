@@ -56,7 +56,7 @@ let routes:Routes=[
   {path:'cards/:id',component:CardDetailsComponent},
   {path:'your-property',component:YourPropertiesComponent},
   {path:'host-reservations',component:HostReservationComponent},
-  {path:'add-property',component:AddPropertyComponent},
+  {path:'add-apartment',component:AddApartmentComponent},
   {path:'**',component:ErrorComponent}
 ]
 

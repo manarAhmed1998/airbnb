@@ -123,11 +123,11 @@ i:number=0;
     propertyToAdd.country=secondformValues.country;
     propertyToAdd.city=secondformValues.city;
     propertyToAdd.street=secondformValues.address;
-    propertyToAdd.PropertyAmenities=thirdormValues.amenities;
-    propertyToAdd.propertyRules=fourthformValues.rules;
-    propertyToAdd.rooms=fifthformValues.room;
-    propertyToAdd.propertyTitle;
-    console.log(propertyToAdd);
+    // propertyToAdd.PropertyAmenities=thirdormValues.amenities;
+    // propertyToAdd.propertyRules=fourthformValues.rules;
+    // propertyToAdd.rooms=fifthformValues.room;
+    // propertyToAdd.propertyTitle;
+    // console.log(propertyToAdd);
   }
 
 
