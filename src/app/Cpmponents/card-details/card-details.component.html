@@ -2,7 +2,7 @@
  
   <div class="row col-12 col-sm-6 col-md-12">
     <div class="h3" style="padding-left: 40px; color: rgb(70, 70, 70)">
-      Centre place Graslin - Private room La Cambronne
+      {{card.description}}
       <br />
       <span id="Rating"
         ><svg
@@ -17,30 +17,30 @@
             d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
           />
         </svg>
-        4.98
+        {{card.rating}}
       </span>
-      <span id="renter">renter</span>
+      <span id="renter">{{card.host.name}}</span>
     </div>
 
 
     <div class="container">
       <div id="largeimg1">
         <img
-          src="https://a0.muscache.com/im/pictures/miso/Hosting-668146487515150072/original/8ff2a532-e0cd-41a2-9164-554c4d9eb28a.jpeg?im_w=960"
+          src="{{card.rooms[0].images[0]}}"
           alt="Image 1"
         />
       </div>
       <div id="smallimages2">
         <div class="col-sm-12 col-md-12" id="2a">
           <img
-            src="https://a0.muscache.com/im/pictures/miso/Hosting-668146487515150072/original/7da9fd6a-8d6c-4954-88b0-1fc52abc9cfd.jpeg?im_w=720"
+            src="{{card.rooms[0].images[1]}}"
             alt="Image 2"
           />
         </div>
   
         <div class="col-sm-12 col-md-12" id="2b">
           <img
-            src="https://a0.muscache.com/im/pictures/miso/Hosting-26300485/original/35989289-d57f-449a-b23b-0c285e715ee1.jpeg?im_w=720"
+            src="{{card.rooms[0].images[2]}}"
             alt="Image 3"
           />
         </div>
@@ -48,13 +48,13 @@
       <div id="smallimages3">
         <div class="col-sm-12 col-md-12" id="2c">
           <img
-            src="https://a0.muscache.com/im/pictures/miso/Hosting-26300485/original/061a1f0a-27f0-4bf6-acee-05e978030487.jpeg?im_w=720"
+            src="{{card.rooms[0].images[3]}}"
             alt="Image 4"
           />
         </div>
         <div class="col-sm-12 col-md-12" id="2d">
           <img
-            src="https://a0.muscache.com/im/pictures/miso/Hosting-26300485/original/88cec5b3-01ab-4d26-8597-bd3b1fc36e01.jpeg?im_w=720"
+            src="{{card.rooms[0].images[4]}}"
             alt="Image 5"
           />
         </div>
@@ -73,20 +73,20 @@
         <li>
           <div class="card" style="width: 18rem;">
             <div class="card-header">
-              Bedroom 2
+              1: {{card.rooms[0].roomType}}
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">2 single beds</li>
+              <li><div style="border: hidden;" *ngIf="card.rooms[1].roomType=='bedroom'" class="list-group-item">2 single beds></div></li>
             </ul>
           </div>
         </li>
         <li>
           <div class="card" style="width: 18rem;">
             <div class="card-header">
-              Bedroom 2
+              2: {{card.rooms[1].roomType}}            
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">2 single beds</li>
+              <li><div style="border: hidden;" *ngIf="card.rooms[2].roomType=='Bedroom'" class="list-group-item">2 single beds</div></li>
             </ul>
           </div>
         </li>
@@ -138,7 +138,7 @@
    <!-- floating menu -->
     <div class="col-3 floating-menu shadow p-3 mb-5 bg-white rounded" style="height: fit-content;">
       <span id="price"
-        >$41<span style="font-weight: 100; font-size: medium">
+        >{{card.rating}} EGP<span style="font-weight: 100; font-size: medium">
           night</span
         ></span
       >
@@ -155,7 +155,7 @@
             d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
           />
         </svg>
-        4.98 </span
+        {{card.rating}} </span
       ><br /><br />
       <form>
         <!-- datePicker -->
@@ -181,11 +181,32 @@
         </div>
         <br /><br />
 
-        <button type="submit" class="container btn btn-danger">Reserve</button>
+        <button type="submit" class="container btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">Reserve</button>
         <hr />
         <span style="font-weight: bold; font-size: large">Total</span>
         <span id="total">$<span>308</span></span>
       </form>
     </div>
   </div>
+
 </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Confirm Reservation </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+

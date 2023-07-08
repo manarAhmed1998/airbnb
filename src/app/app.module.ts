@@ -82,8 +82,7 @@ let routes:Routes=[
     HostReservationComponent,
     RoleDashboardComponent,
     RuleDashboardComponent,
-    AddPropertyComponent,
-    AddApartmentComponent
+    AddPropertyComponent
   ],
   imports: [
     BrowserModule,
