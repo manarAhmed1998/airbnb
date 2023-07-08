@@ -17,7 +17,7 @@ export class Room{
     roomType:string='';
     numberOfBeds:string='';
     propertyId:string='';
-    images:Image[]=[]
+    images:string='';
 }
 export class Image{
     path:string='';

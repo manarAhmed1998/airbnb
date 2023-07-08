@@ -27,6 +27,7 @@ import { MatCard, MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { MatOptionModule } from "@angular/material/core";
 import { AddPropertyDto } from "../types/AddPropertyDto";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-add-property",
@@ -158,8 +159,13 @@ i:number=0;
           }
         })
       );
+
+      
   }
 
+  saveForm() {
+      
+  }
 
 onFileSelected(event: any, room: Room) {
   const file: File = event.target.files[0];
