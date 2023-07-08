@@ -20,10 +20,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                   <tr *ngFor="let role of roles" >
-                    <td>{{ role.id }}</td>
-                    <td>{{role.role}}</td>
-                  </tr>
+                   <!-- <tr *ngFor="let rule of rules" > -->
+                    <!-- <td>{{ rule.id }}</td>
+                    <td>{{rule.rule}}</td>
+                  </tr> -->
                 </tbody>
               </table>
             </div>
@@ -42,7 +42,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
   
         </div>
-        <form>
+        <!-- <form>
           <div class="modal-body">
             
            
@@ -64,7 +64,24 @@
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
           </div>
+        </form> -->
+        <form #ruleForm="ngForm">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="imageInput">Image</label>
+              <input type="file" class="form-control-file" id="imageInput" name="image" [(ngModel)]="imageUrl">
+            </div>
+            <div class="form-group">
+              <label for="contentInput">Content</label>
+              <!-- <textarea class="form-control" id="contentInput" name="content" rows="3" [(ngModel)]="content"></textarea> -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary" (click)="addRules(ruleForm)">Save changes</button> -->
+          </div>
         </form>
       </div>
     </div>
   </div>
+ 

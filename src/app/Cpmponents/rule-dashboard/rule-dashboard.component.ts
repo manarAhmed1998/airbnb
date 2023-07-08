@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-
+import { DashboardServiceService } from 'src/app/services/dashboard-service.service';
 @Component({
   selector: 'app-rule-dashboard',
   templateUrl: './rule-dashboard.component.html',
   styleUrls: ['./rule-dashboard.component.css']
 })
 export class RuleDashboardComponent {
-  roles = [
-    { id: 1, role: 'guest'},
-    { id: 2, role: 'host'  }
-  ];
+ imageUrl = ' ';
+
+ constructor(private dashboardService : DashboardServiceService) {}
+
+
 }
+
+
+
+

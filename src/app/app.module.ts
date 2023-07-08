@@ -37,8 +37,8 @@ import { NavbarDashboardComponent } from "./Cpmponents/navbar-dashboard/navbar-d
 import { DashboardComponent } from './Cpmponents/dashboard/dashboard.component';
 import { YourPropertiesComponent } from './Cpmponents/your-properties/your-properties.component';
 import { HostReservationComponent } from './Cpmponents/host-reservation/host-reservation.component';
-import { RoleDashboardComponent } from './role-dashboard/role-dashboard.component';
-import { RuleDashboardComponent } from './rule-dashboard/rule-dashboard.component';
+import { RoleDashboardComponent } from './Cpmponents/role-dashboard/role-dashboard.component';
+import { RuleDashboardComponent } from './Cpmponents/rule-dashboard/rule-dashboard.component';
 
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
