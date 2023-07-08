@@ -57,7 +57,6 @@ let routes:Routes=[
   {path:'your-property',component:YourPropertiesComponent},
   {path:'host-reservations',component:HostReservationComponent},
   {path:'add-apartment',component:AddApartmentComponent},
-  {path:'add-property',component:AddPropertyComponent},
   {path:'reservations',component:ReservationsComponent},
   {path:'**',component:ErrorComponent}
 ]
