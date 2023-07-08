@@ -11,7 +11,8 @@ export class CardsComponent {
   constructor(myService:CardsService){
     myService.getAllCards().subscribe(
       {
-        next:(data)=>{//console.log(data)
+        next:(data)=>{console.log(data);
+        
           this.cards=data;
         },
         error:(err)=>{console.log(err)},
