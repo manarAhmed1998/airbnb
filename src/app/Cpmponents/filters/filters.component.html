@@ -1,4 +1,6 @@
 <div class="container">
+  <div class="form-group">
+    <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
   <!-- Modal -->
   <div
     class="modal fade"
@@ -18,18 +20,18 @@
             <div class="mb-3">
               <!-- Price input -->
               <label for="minPriceInput" class="form-label">from:</label>
-              <input
+              <input #FilterPriceInput
                 type="number"
                 class="form-control value-input"
-                id="minPriceInput"
+
               />
             </div>
             <div class="mb-3">
               <!-- Price input -->
               <label for="maxPriceInput" class="form-label">to:</label>
-              <input
+              <input #FilterPriceInput
                 type="number"
-                class="form-control value-input"
+                class="form-control-name value-input"
                 id="maxPriceInput"
                 value=""
               />
@@ -50,7 +52,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault1">
               <span>1</span>
-              <input
+              <input #BedroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Bedrooms"
@@ -61,7 +63,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault2">
               <span>2</span>
-              <input
+              <input #BedroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Bedrooms"
@@ -72,7 +74,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault3">
               <span>3</span>
-              <input
+              <input #BedroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Bedrooms"
@@ -83,7 +85,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault4">
               <span>4</span>
-              <input
+              <input #BedroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Bedrooms"
@@ -94,7 +96,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault5">
               <span>5</span>
-              <input
+              <input #BedroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Bedrooms"
@@ -116,7 +118,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault7">
               <span>7</span>
-              <input
+              <input #BedroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Bedrooms"
@@ -127,7 +129,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault8">
               <span>8</span>
-              <input
+              <input #BedroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Bedrooms"
@@ -138,7 +140,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault9">
               <span>9</span>
-              <input
+              <input #BedroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Bedrooms"
@@ -149,7 +151,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefaultAny">
               <span>Any</span>
-              <input
+              <input #BedroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Bedrooms"
@@ -167,7 +169,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault1">
               <span>1</span>
-              <input
+              <input #BedFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Beds"
@@ -178,7 +180,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault2">
               <span>2</span>
-              <input
+              <input #BedFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Beds"
@@ -189,7 +191,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault3">
               <span>3</span>
-              <input
+              <input #BedFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Beds"
@@ -200,7 +202,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault4">
               <span>4</span>
-              <input
+              <input #BedFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Beds"
@@ -211,7 +213,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault5">
               <span>5</span>
-              <input
+              <input #BedFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Beds"
@@ -222,7 +224,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault6">
               <span>6</span>
-              <input
+              <input #BedFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Beds"
@@ -233,7 +235,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault7">
               <span>7</span>
-              <input
+              <input #BedFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Beds"
@@ -244,7 +246,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault8">
               <span>8</span>
-              <input
+              <input #BedFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Beds"
@@ -255,7 +257,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault9">
               <span>9</span>
-              <input
+              <input #BedFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Beds"
@@ -266,7 +268,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefaultAny">
               <span>Any</span>
-              <input
+              <input #BedFilterInput
                 class="form-check-input"
                 type="radio"
                 name="Beds"
@@ -283,7 +285,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault1">
               <span>1</span>
-              <input
+              <input #BathroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="flexRadioDefault"
@@ -294,7 +296,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault2">
               <span>2</span>
-              <input
+              <input  #BathroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="flexRadioDefault"
@@ -305,7 +307,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault3">
               <span>3</span>
-              <input
+              <input #BathroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="flexRadioDefault"
@@ -316,7 +318,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault4">
               <span>4</span>
-              <input
+              <input #BathroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="flexRadioDefault"
@@ -327,7 +329,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault5">
               <span>5</span>
-              <input
+              <input #BathroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="flexRadioDefault"
@@ -338,7 +340,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault6">
               <span>6</span>
-              <input
+              <input #BathroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="flexRadioDefault"
@@ -349,7 +351,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault7">
               <span>7</span>
-              <input
+              <input #BathroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="flexRadioDefault"
@@ -360,7 +362,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault8">
               <span>8</span>
-              <input
+              <input #BathroomFilterInput 
                 class="form-check-input"
                 type="radio"
                 name="flexRadioDefault"
@@ -371,7 +373,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefault9">
               <span>9</span>
-              <input
+              <input #BathroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="flexRadioDefault"
@@ -382,7 +384,7 @@
           <div class="form-check d-inline-block">
             <label class="form-check-label" for="flexRadioDefaultAny">
               <span>Any</span>
-              <input
+              <input #BathroomFilterInput
                 class="form-check-input"
                 type="radio"
                 name="flexRadioDefault"
@@ -445,13 +447,15 @@
           </button>
           <button
             type="button"
-            class="btn btn-primary"
-            (click)="applyFilters()"
-          >
+            class="btn btn-primary">
+         
+          
             Apply
           </button>
         </div>
       </div>
     </div>
+  </div>
+  </form>
   </div>
 </div>
