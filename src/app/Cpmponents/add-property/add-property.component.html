@@ -349,8 +349,8 @@
             <div class="row">
               <div class="button-container">
               <button class="btn btn-primary" id="add-room">Add Another Room</button>
-              <button class="btn btn-primary" id="save-room">Save Room</button>
-              <button class="btn btn-primary" id="save-all">Save All</button>
+              <button class="btn btn-primary"  id="save-room">Save Room</button>
+              <button class="btn btn-primary" (click)="save()" id="save-all">Save All</button>
               <button class="btn btn-danger" id="delete-room">Delete Room</button>
             </div>
           </div>
@@ -394,6 +394,7 @@
             
             document.getElementById('save-all').addEventListener('click', function() {
               // Implement save all functionality here
+              console.log("Hello");
             });
             
             document.getElementById('delete-room').addEventListener('click', function() {

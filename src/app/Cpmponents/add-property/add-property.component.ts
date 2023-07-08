@@ -26,6 +26,7 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatCard, MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { MatOptionModule } from "@angular/material/core";
+import { AddPropertyDto } from "../types/AddPropertyDto";
 
 @Component({
   selector: "app-add-property",
@@ -101,14 +102,33 @@ i:number=0;
       rules: this._formBuilder.array(this.houseRules.map(() => false)),
     });
     this.fifthFormGroup = this._formBuilder.group({
-    
     });
 
     this.stepperOrientation = this.getStepperOrientation();
     
   }
   
-  
+  save(){
+    var propertyToAdd=new AddPropertyDto();
+    const firstformValues = this.firstFormGroup.value;
+    const secondformValues = this.secondFormGroup.value;
+    const thirdormValues = this.thirdFormGroup.value;
+    const fourthformValues = this.fourthFormGroup.value;
+    const fifthformValues = this.fifthFormGroup.value;
+    propertyToAdd.propertyType=firstformValues.propertyType;
+    propertyToAdd.pricePerNight=firstformValues.pricePerNight;
+    propertyToAdd.insuranceTax=firstformValues.insuranceTax;
+    propertyToAdd.description=firstformValues.description;
+    propertyToAdd.country=secondformValues.country;
+    propertyToAdd.city=secondformValues.city;
+    propertyToAdd.street=secondformValues.address;
+    propertyToAdd.PropertyAmenities=thirdormValues.amenities;
+    propertyToAdd.propertyRules=fourthformValues.rules;
+    propertyToAdd.rooms=fifthformValues.room;
+    propertyToAdd.propertyTitle;
+    console.log(propertyToAdd);
+  }
+
 
      
   
