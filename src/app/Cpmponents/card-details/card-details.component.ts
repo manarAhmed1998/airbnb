@@ -26,6 +26,7 @@ export class CardDetailsComponent implements OnInit {
       },
       error: (err) => {console.log(err);},
       complete: () => {},
+      
     });
   }
 }
